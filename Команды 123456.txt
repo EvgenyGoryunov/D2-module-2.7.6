@@ -8,19 +8,13 @@
 <User: Roman>
 
 
-2.1 создаем 2-х авторов
+2. создаем 2-х авторов
 >>> Author.objects.create(authorUser=u1)
 <Author: Author object (1)>
 >>> Author.objects.create(authorUser=u2)
 <Author: Author object (2)>
-
-2.2 присваим переменным author1 и author2 значения authorUser
->>> author1=Author.objects.get(id=1)
->>> author1
-<Author: Author object (1)>
 >>> author1.authorUser
 <User: John>
->>> author2=Author.objects.get(id=2)
 >>> author2.authorUser
 <User: Roman>
 
