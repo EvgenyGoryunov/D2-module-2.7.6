@@ -10,20 +10,18 @@
 <br>
 <h1>Все новости и посты</h1>
 <br>
-
 {% if posts %} <!-- Выводим товары только, если они есть с помощью тега if -->
 {% for post in posts %}
 <br>
 <h3>{{ post }}</h3>
 <br>
-{{ post.dateCreation | date:'M d Y' }}
+{{ post.dateCreation  }}
 <br>
 <br>
-{{ post.text }}
+{{ post.text |truncatechars:150 }}
 <br>
 <hr>
 {% endfor %}
-
 
 {% else %} <!-- Если товаров нет, то говорим, что товаров нет ;) -->
     <h3>Новостей нет!</h3>
