@@ -105,7 +105,7 @@ class Post(models.Model):
 
     #  функция, которая говорит, как лучше вывести объект в админ панель
     def __str__(self):
-        return f'{self.title}: {self.text[:20]}'
+        return f'{self.title}'
 
 # Промежуточная модель для связи «многие ко многим»:
 class PostCategory(models.Model):
