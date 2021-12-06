@@ -76,8 +76,10 @@ class Post(models.Model):
     # автоматически добавляемая дата и время создания;
     dateCreation = models.DateTimeField(auto_now_add=True)
 
+
     # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
-    postCategory = models.ManyToManyField(Category, through='PostCategory')
+    postCategory = models.ManyToManyField(Category, through='postCategory')
+
 
     # заголовок статьи/новости;
     title = models.CharField(max_length=128)
