@@ -9,15 +9,13 @@ The Best News: {{ post }}
 <!-- В контенте на странице мы выводим сам товар, ID которого было передано в адрес -->
 {% block content %}
 <br>
-<h2>{{ post }}</h2>
-<br>
-{{ post.dateCreation | date:'M d Y' }}
-<br>
+<h3>{{ post }}</h3>
 <br>
 {{ post.text }}
+<br>
+<br>
+Дата создания: {{ post.dateCreation | date:'M d Y' }}; Автор: {{ post.author }}; Рейтинг: {{ post.rating }}
 <br>
 <hr>
 
 {% endblock content %}
-
-dateCreation
