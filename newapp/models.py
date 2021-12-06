@@ -39,6 +39,10 @@ class Author(models.Model):
         # сохранение модели в БД
         self.save()
 
+    #  функция, которая говорит, как лучше вывести объект в админ панель
+    def __str__(self):
+        return f'{self.authorUser}'
+
 
 # Категории новостей/статей — темы, которые они отражают (спорт, политика,образование и т. д.).
 class Category(models.Model):
@@ -47,6 +51,10 @@ class Category(models.Model):
     # (в определении поля необходимо написать параметр unique = True).
     # максимальную длину строки берут как правило в н-ой степени, 2,4,8,16,32...128,256
     name = models.CharField(max_length=64, unique=True)
+
+    #  функция, которая говорит, как лучше вывести объект в админ панель
+    def __str__(self):
+        return f'{self.name}'
 
 
 # Эта модель должна содержать в себе статьи и новости, которые создают пользователи.
@@ -95,6 +103,9 @@ class Post(models.Model):
     def preview(self):
         return self.text[0:123] + '...'
 
+    #  функция, которая говорит, как лучше вывести объект в админ панель
+    def __str__(self):
+        return f'{self.title}: {self.text[:20]}'
 
 # Промежуточная модель для связи «многие ко многим»:
 class PostCategory(models.Model):
@@ -134,3 +145,7 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+
+    #  функция, которая говорит, как лучше вывести объект в админ панель
+    def __str__(self):
+        return f'{self.commentUser}: {self.text[:20]}'

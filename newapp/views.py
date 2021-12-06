@@ -13,5 +13,5 @@ class PostsList(ListView):
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostsDetail(DetailView):
     model = Post  # модель всё та же, но мы хотим получать детали конкретно отдельного товара
-    template_name = 'post.html'  # название шаблона будет product.html
+    template_name = 'postpost.html'  # название шаблона будет product.html
     context_object_name = 'post'  # название объекта
