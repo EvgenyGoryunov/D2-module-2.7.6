@@ -1,7 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
 
-<!-- Название у нас будет-->
+<!-- Название вкладки (строки в браузере)-->
 {% block title %}
 -=NewsPortal CityTomsk=-
 {% endblock title %}
@@ -11,13 +11,14 @@
 <br>
 <h1>Все новости и посты</h1>
 <br>
-{% if posts %} <!-- Выводим товары только, если они есть с помощью тега if -->
 
+<!-- Выводим новости только, если они есть с помощью тега if -->
+{% if posts %}
 {% for post in posts %}
 <br>
 <h3>{{ post }}</h3>
 <br>
-{{ post.dateCreation  }}
+{{ post.dateCreation }}
 <br>
 <br>
 {{ post.text |truncatechars:150 }}
@@ -25,9 +26,11 @@
 <hr>
 {% endfor %}
 
-{% else %} <!-- Если товаров нет, то говорим, что товаров нет ;) -->
-    <h3>Новостей нет!</h3>
+<!-- Если новостей нет, то говорим, что товаров нет ;) -->
+{% else %}
+<h3>Новостей нет!</h3>
 {% endif %}
+
 <br>
 <hr>
 {% endblock content %}
