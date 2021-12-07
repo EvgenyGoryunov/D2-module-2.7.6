@@ -13,6 +13,7 @@ The Best News: {{ post }}
 <br>
 {{ post.text }}
 <br>
+{{ posts | length }}
 <br>
 <hr>
 Дата создания: {{ post.dateCreation | date:'M d Y' }}; автор: {{ post.author }}; рейтинг: {{ post.rating }}; номер: {{ post.id }}

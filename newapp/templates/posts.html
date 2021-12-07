@@ -1,5 +1,6 @@
 {% extends 'flatpages/default.html' %}
 
+
 <!-- Название у нас будет-->
 {% block title %}
 -=NewsPortal CityTomsk=-
@@ -11,6 +12,7 @@
 <h1>Все новости и посты</h1>
 <br>
 {% if posts %} <!-- Выводим товары только, если они есть с помощью тега if -->
+
 {% for post in posts %}
 <br>
 <h3>{{ post }}</h3>
