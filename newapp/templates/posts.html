@@ -1,5 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
 <!-- Название вкладки (строки в браузере)-->
 {% block title %}
 -=NewsPortal CityTomsk=-
@@ -9,9 +11,9 @@
 <br>
 <h1>Все новости и посты</h1>
 
-<h1>{{ value1 }}</h1>
+<!-- {{ value1 | Censor:"" }} -->
 <br>
-<h6>всего количество новостей
+<h6>Всего новостей
 {{ posts | length }}</h6>
 <!-- Выводим новости только, если они есть с помощью тега if -->
 {% if posts %}
@@ -27,7 +29,7 @@
 <br>
 <br>
 
-{{ post.text |truncatechars:150 }}
+{{ post.text | Censor:"" | truncatechars:150 }}
 <br>
 <hr>
 {% endfor %}
@@ -40,5 +42,3 @@
 <br>
 <hr>
 {% endblock content %}
-
-

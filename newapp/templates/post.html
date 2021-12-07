@@ -1,6 +1,8 @@
 <!--  наследуемся от шаблона default.html, который мы создавали ещё во времена flatpages -->
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
 <!-- Название у нас будет  -->
 {% block title %}
 The Best News: {{ post }}
@@ -11,9 +13,8 @@ The Best News: {{ post }}
 <br>
 <h3>{{ post }}</h3>
 <br>
-{{ post.text }}
+{{ post.text | Censor:"" }}
 <br>
-{{ posts | length }}
 <br>
 <hr>
 Дата создания: {{ post.dateCreation | date:'M d Y' }}; автор: {{ post.author }}; рейтинг: {{ post.rating }}; номер: {{ post.id }}
