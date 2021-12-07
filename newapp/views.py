@@ -13,11 +13,10 @@ class PostsList(ListView):
     queryset = Post.objects.order_by('-dateCreation')
 
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['time_now'] = datetime.utcnow()  # добавим переменную текущей даты time_now
-        context['value1'] = None  # добавим ещё одну пустую переменную, чтобы на её примере посмотреть работу
+        context['value1'] = "Проверка"  #None  # добавим ещё одну пустую переменную, чтобы на её примере посмотреть работу
         # другого фильтра
         return context
 
